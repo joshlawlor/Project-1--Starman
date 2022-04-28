@@ -1,0 +1,108 @@
+html {
+  
+    
+}
+
+
+#main {
+    display: flex;
+    border: 3px solid red;
+    background-color: black;
+    height: 50vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url(spaceBG.jfif);
+    background-repeat: no-repeat;
+
+}
+        .gameItems {
+            border: 3px solid white;
+            width: 20vw;
+            height: 40vw;
+        }
+
+        #astronaut {
+            width: 100%;
+        }
+        #rocket {
+            width: 100%;
+        }
+
+         
+/*************************************************************************/
+
+
+.text {
+    color: white;
+    
+}
+
+
+
+
+
+
+
+
+
+
+#timerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50vw;
+}
+
+        #title {
+            color: white;
+            border: 3px solid red;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        #timerEl{
+            border: 3px solid red;
+            height: 16vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        #rules {
+            border: 3px solid red;
+            height: 15vh;
+            display: flex;
+            justify-content: center;
+
+        }
+
+
+
+/* ***************************************** */
+
+#textbox {
+    border: 3px solid green;
+    height: 15vh;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+        .box{
+            border: 3px solid black;
+            width: 8vw;
+            height: 8vh;
+        }
+
+
+
+#playerUI {
+    border: 3px solid purple;
+    height: 30vh;
+    background-color: lightblue;
+    
+}
+
