@@ -33,7 +33,6 @@ function makeBoxes() {
         textbox.appendChild(box)
     }
 
-
 }
 
 makeBoxes();

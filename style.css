@@ -12,8 +12,9 @@ html {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-image: url(spaceBG.jfif);
+    background-image: url(/images/spaceBG.jfif);
     background-repeat: no-repeat;
+    background-size: 100%;
 
 }
         .gameItems {
@@ -89,13 +90,21 @@ html {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    background-image: url("/images/stripes.svg");
+    background-repeat: repeat;
+
+    
     
 }
         .box{
             border: 3px solid black;
             width: 8vw;
             height: 8vh;
+            background-color: grey;
         }
+
+
+
 
 
 
@@ -103,6 +112,67 @@ html {
     border: 3px solid purple;
     height: 30vh;
     background-color: lightblue;
+    background-image: url(/images/UI.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+    background-position: 0%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
     
 }
 
+    #reset {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        #resetButton {
+            height: 20vh;
+            background-color: red;
+        }
+
+
+
+    #keyBoard {
+        width: 80vw;
+        
+    }
+        #keyBoardRows {
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            justify-content: center;
+        }
+
+                .row {
+                    display: flex;
+                    justify-content: center;
+                    justify-content: space-between;
+                    
+                }
+
+                .button {
+                    width: 8vw;
+                    height: 8vw;
+                }
+
+
+
+
+
+    #startGame {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        #startButton {
+            height: 20vh;
+            background-color: green;
+        }

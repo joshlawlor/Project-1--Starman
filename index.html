@@ -14,7 +14,7 @@
     <div id="main">
         
 
-        <div id="SPACESHIP" class="gameItems"><img id="rocket" src="rocket.png" alt="">
+        <div id="SPACESHIP" class="gameItems"><img id="rocket" src="/images/rocket.png" alt="">
         
         </div>
         <div id="timerBox"  class="gameItems">
@@ -23,7 +23,7 @@
             <div id="rules"><h1 class="text">Rules</h1></div>
             
         </div>
-        <div id="spaceman"  class="gameItems"><img  id="astronaut" src="spaceman.png" alt="">
+        <div id="spaceman"  class="gameItems"><img  id="astronaut" src="/images/spaceman.png" alt="">
         
         </div>
 
@@ -32,15 +32,63 @@
     <div id="textbox">
 
     </div>
-    <div id="letters">
+    <!-- <div id="letters">
 
-    </div>
+    </div> -->
 
     <div id="playerUI">
-        <div class="keyboard">
+       
+        <div id="reset">
+            <div><button id="resetButton" class="button">RESET</button></div>
+            
+        </div>
+
+        <div id="keyBoard">
+
+           <div id="keyBoardRows">
+                <div class="row">
+                    <button class="button" data-key="q">q</button>
+                    <button class="button" data-key="w">w</button>
+                    <button class="button" data-key="e">e</button>
+                    <button class="button" data-key="r">r</button>
+                    <button class="button" data-key="t">t</button>
+                    <button class="button" data-key="y">y</button>
+                    <button class="button" data-key="u">u</button>
+                    <button class="button" data-key="i">i</button>
+                    <button class="button" data-key="o">o</button>
+                    <button class="button" data-key="p">p</button>
+                </div>
+
+                <div class="row">
+                    <button class="button" data-key="a">a</button>
+                    <button class="button" data-key="s">s</button>
+                    <button class="button" data-key="d">d</button>
+                    <button class="button" data-key="f">f</button>
+                    <button class="button" data-key="g">g</button>
+                    <button class="button" data-key="h">h</button>
+                    <button class="button" data-key="j">j</button>
+                    <button class="button" data-key="k">k</button>
+                    <button class="button" data-key="l">l</button>
+                </div>
+
+                <div class ="row">
+                    <button class="button" data-key="z">z</button>
+                    <button class="button" data-key="x">x</button>
+                    <button class="button" data-key="c">c</button>
+                    <button class="button" data-key="v">v</button>
+                    <button class="button" data-key="b">b</button>
+                    <button class="button" data-key="n">n</button>
+                    <button class="button" data-key="m">m</button>  
+                </div>
+            </div> 
 
 
 
+
+        </div>
+
+        <div id="startGame">
+            <button id="startButton" class="button">START</button>
         </div>
 
     </div>
