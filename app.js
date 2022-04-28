@@ -8,21 +8,10 @@
 
 
 
-const word = ["S", "P", "A" , "C" , "E"];
+const word = ["s", "P", "A" , "C" , "E"];
 console.log(word)
 // let letter = document.getElementById("userInput").value
 
-function guessWord() {
-
-    if (letter === word[0]){
-        console.log(`Correct, the first letter is ${word[0]}`)
-    }
-
-
-
-}
-
-//*Function to create letterboxes based on how many letters inside the secret word
 function makeBoxes() {
     const textBox = document.getElementById("textBox")
 
@@ -34,5 +23,32 @@ function makeBoxes() {
     }
 
 }
+
+let box1 = document.getElementById("1")
+console.log(box1)
+
+
+function guessWord(letter) {
+
+    if (letter === word[0]){
+        alert(`Correct, the first letter is ${word[0]}`)
+        
+        
+    }
+
+
+
+}
+
+//*Function to create letterboxes based on how many letters inside the secret word
+
+
+
+const s = document.querySelector('[data-key="s"]')
+let userClick = s.addEventListener("click", (e) => {
+    let letter = e.target.getAttribute("data-key")
+    guessWord(letter);
+})
+console.log(userClick)
 
 makeBoxes();
