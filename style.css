@@ -1,14 +1,17 @@
-html {
-  
+
+
+.text {
+    color: white;
     
 }
+
 
 
 #main {
     display: flex;
     border: 3px solid red;
     background-color: black;
-    height: 50vh;
+    max-height: 50vh;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -19,40 +22,25 @@ html {
 }
         .gameItems {
             border: 3px solid white;
-            width: 20vw;
-            height: 40vw;
+            max-width: 20vw;
+            max-height: 20vw;
         }
 
         #astronaut {
-            width: 100%;
+            max-width: 50%;
         }
         #rocket {
-            width: 100%;
+            max-width: 50%;
         }
 
          
 /*************************************************************************/
 
-
-.text {
-    color: white;
-    
-}
-
-
-
-
-
-
-
-
-
-
 #timerBox {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 50vw;
+    min-width: 50vw;
 }
 
         #title {
@@ -84,7 +72,7 @@ html {
 
 #textbox {
     border: 3px solid green;
-    height: 15vh;
+    min-height: 15vh;
     background-color: grey;
     display: flex;
     flex-direction: row;
@@ -101,6 +89,11 @@ html {
             width: 8vw;
             height: 8vh;
             background-color: grey;
+            font-size: xx-large;
+            display: flex;
+            justify-content: center;
+            color: white;
+            align-items: center;
         }
 
 
@@ -133,6 +126,12 @@ html {
         #resetButton {
             height: 20vh;
             background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+
         }
 
 
@@ -158,8 +157,8 @@ html {
                 }
 
                 .button {
-                    width: 8vw;
-                    height: 8vw;
+                    width: 3vw;
+                    height: 3vw;
                 }
 
 
@@ -173,6 +172,7 @@ html {
     }
 
         #startButton {
-            height: 20vh;
+            min-height: 25vh;
             background-color: green;
+            font-size: x-large;
         }
