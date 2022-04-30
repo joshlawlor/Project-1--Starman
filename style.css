@@ -55,7 +55,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-width: 50vw;
+    min-width: 40vw;
 }
 
         #title {
@@ -96,11 +96,22 @@ body{
 
         #rules {
             /* border: 3px solid red; */
-            height: 15vh;
+            height: 20vh;
             display: flex;
+            flex-direction: row;
             justify-content: center;
+            font-size: x-small;
 
         }
+            #gameText{
+                display: flex;
+                justify-content: center;
+                
+            }
+            #rulesList{
+                display: flex;
+                justify-content: center;
+            }
 
 
 
@@ -130,6 +141,7 @@ body{
             justify-content: center;
             color: white;
             align-items: center;
+            
         }
 
 
@@ -160,14 +172,15 @@ body{
     }
 
         #resetButton {
-            height: 20vh;
+            min-height: 25vh;
+            width: 5vw;
+            border: 8px solid black;
             background-color: red;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-size: large;
-
+            font-size: xx-large;
         }
 
 
@@ -193,8 +206,15 @@ body{
                 }
 
                 .button {
-                    width: 3vw;
-                    height: 3vw;
+                    /* border: 7px solid #FF6600; */
+                    width: 6vw;
+                    height: 5vw;
+                    margin: 9px;
+                    font-size: x-large;
+                    background-color: #FF6600;
+                    background-image: url(/images/metalTexture.jpg);
+                    background-size: 170%;
+                    background-repeat: repeat; 
                 }
 
 
@@ -208,7 +228,9 @@ body{
     }
 
         #startButton {
+            border: 8px solid black;
             min-height: 25vh;
+            width: 5vw;
             background-color: green;
-            font-size: x-large;
+            font-size: xx-large;
         }
