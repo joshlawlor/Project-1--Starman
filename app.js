@@ -32,12 +32,23 @@ function countDown() {
     timeLeft = timeLeft-1;
     if(timeLeft >= 0){
         document.getElementById("timeLeft").innerHTML = timeLeft
-    }else {
-        alert(`GAME OVER`)
+    }else{
+        alert(`GAME OVER!`)
     }
 }
-countDown();
 
+
+//**START GAME FUNCTION AND VARIABLES**/
+const startButton = document.getElementById("startButton")
+startButton.addEventListener("click", (e) => {
+    return startGame();
+})
+
+function startGame (){
+    timer = setInterval(countDown, 1000);
+    countDown();
+
+}
 
 // Grabs each box that is created and assigns it a variable, 
 // need to make this DRY with a function
