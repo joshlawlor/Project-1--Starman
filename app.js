@@ -26,14 +26,14 @@ makeBoxes();
 
 //*****TIMER FUNCTION AND VARIABLES*****
 let timer = 0;
-let timeLeft = 60;
+let timeLeft = 10;
 
 function countDown() {
     timeLeft = timeLeft-1;
     if(timeLeft >= 0){
         document.getElementById("timeLeft").innerHTML = timeLeft
     }else{
-        alert(`GAME OVER!`)
+        gameOver();
     }
 }
 
@@ -58,20 +58,14 @@ let box3 = document.getElementById(3)
 let box4 = document.getElementById(4)
 let box5 = document.getElementById(5)
 
-function gameWin(){
-    if(playerScore >= word.length){
-        return alert(`You win! The word is SPACE`)
-    }
-}
+
 
 
 
 //This function takes the value of user's click, and compares it to each letter 
 // in our word bank
 // Need to add win function, if all letterboxes are full, user wins
-function guessWord(letter) {
-   
-   
+function guessWord(letter) { 
     if (letter === word[0] && box1.innerHTML !== word[0]){
         alert(`Correct, the first letter is ${word[0]}`)
         playerScore = playerScore + 1;
@@ -97,14 +91,28 @@ function guessWord(letter) {
         playerScore = playerScore + 1;
         box5.innerHTML = letter;
         return gameWin();
-    }else if(playerScore >=5){
-        return alert('You win')
     }else {
         letter.innerHTML = "T"
         alert(`Incorrect! Try another letter!`)
     }
     console.log(playerScore)
     
+}
+
+
+//**WIN/LOSE Functions */
+function gameWin(){
+    if(playerScore >= word.length){
+        clearInterval(timer);
+        alert(`You win! The word is SPACE`)
+    }
+}
+
+function gameOver(){
+    clearInterval(timer);
+    for(let i = 0; i < 1; i++){
+        alert(`GAME OVER`)
+    }
 }
 
 //RESET BUTTON
