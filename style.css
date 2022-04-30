@@ -44,22 +44,42 @@
 }
 
         #title {
-            color: white;
-            border: 3px solid red;
+            /* border: 3px solid red; */
             height: 10vh;
             display: flex;
             justify-content: center;
+            color: red;
+            font-size: xx-large;
         }
 
         #timerEl{
-            border: 3px solid red;
+            /* border: 3px solid blue; */
             height: 16vh;
             display: flex;
+            flex-direction: row;
+            align-items: center;
             justify-content: center;
+            
         }
+            #timerTitle{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+            }
+            #timeLeft{
+                border: 5px solid black;
+                height: 10vh;
+                width: 40vw;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                background-color: grey;
+            }
 
         #rules {
-            border: 3px solid red;
+            /* border: 3px solid red; */
             height: 15vh;
             display: flex;
             justify-content: center;
@@ -103,7 +123,7 @@
 
 #playerUI {
     border: 3px solid purple;
-    height: 30vh;
+    height: 40vh;
     background-color: lightblue;
     background-image: url(/images/UI.jpg);
     background-repeat: repeat;
@@ -141,7 +161,7 @@
         
     }
         #keyBoardRows {
-            height: 30vh;
+            height: 40vh;
             display: flex;
             flex-direction: column;
             justify-content: space-around;

@@ -8,7 +8,7 @@
 
 
 //WORD BANK
-const word = ["S", "P", "A" , "C" , "E"];
+const word = ["S", "P", "A" , "C", "E"];
 let playerScore = 0;
 //*Function to create letterboxes based on how many letters inside the secret word
 function makeBoxes() {
@@ -24,6 +24,20 @@ function makeBoxes() {
 }
 makeBoxes();
 
+//*****TIMER FUNCTION AND VARIABLES*****
+let timer = 0;
+let timeLeft = 60;
+
+function countDown() {
+    timeLeft = timeLeft-1;
+    if(timeLeft >= 0){
+        document.getElementById("timeLeft").innerHTML = timeLeft
+    }else {
+        alert(`GAME OVER`)
+    }
+}
+countDown();
+
 
 // Grabs each box that is created and assigns it a variable, 
 // need to make this DRY with a function
@@ -34,48 +48,52 @@ let box4 = document.getElementById(4)
 let box5 = document.getElementById(5)
 
 function gameWin(){
-    if(playerScore >=5){
-        return alert('You win')
+    if(playerScore >= word.length){
+        return alert(`You win! The word is SPACE`)
     }
-    
 }
-gameWin();
+
 
 
 //This function takes the value of user's click, and compares it to each letter 
 // in our word bank
 // Need to add win function, if all letterboxes are full, user wins
 function guessWord(letter) {
-    
-    if(playerScore >=5){
-        return alert('You win')
-    }
-    
+   
+   
     if (letter === word[0] && box1.innerHTML !== word[0]){
         alert(`Correct, the first letter is ${word[0]}`)
         playerScore = playerScore + 1;
-        return box1.innerHTML = letter;
+        box1.innerHTML = letter;
+        return gameWin();
     }else if(letter === word[1] && box2.innerHTML !== word[1]){
         alert(`Correct, the second letter is ${word[1]}`)
         playerScore = playerScore + 1;
-        return box2.innerHTML = letter;
+        box2.innerHTML = letter;
+        return gameWin();
     }else if(letter === word[2] && box3.innerHTML !== word[2]){
         alert(`Correct, the third letter is ${word[2]}`)
         playerScore = playerScore + 1;
-        return box3.innerHTML = letter;
+        box3.innerHTML = letter;
+        return gameWin();
     }else if(letter === word[3] && box4.innerHTML !== word[3]){
         alert(`Correct, the fourth letter is ${word[3]}`)
         playerScore = playerScore + 1;
-        return box4.innerHTML = letter;
+        box4.innerHTML = letter;
+        return gameWin();
     }else if(letter === word[4] && box5.innerHTML !== word[4]){
         alert(`Correct, the fifth letter is ${word[4]}`)
         playerScore = playerScore + 1;
-        return box5.innerHTML = letter;
+        box5.innerHTML = letter;
+        return gameWin();
+    }else if(playerScore >=5){
+        return alert('You win')
     }else {
+        letter.innerHTML = "T"
         alert(`Incorrect! Try another letter!`)
     }
     console.log(playerScore)
-   
+    
 }
 
 //RESET BUTTON
@@ -109,6 +127,7 @@ const p = document.querySelector('[data-key="P"]')
 const a = document.querySelector('[data-key="A"')
 const c = document.querySelector('[data-key="C"')
 const e = document.querySelector('[data-key="E"')
+const q = document.querySelector('[data-key="Q"')
 let userClick = s.addEventListener("click", (e) => {
     let letter = e.target.getAttribute("data-key")
     guessWord(letter);
@@ -130,6 +149,11 @@ let userClick4 = c.addEventListener("click", (e) => {
 })
 
 let userClick5 = e.addEventListener("click", (e) => {
+    let letter = e.target.getAttribute("data-key")
+    guessWord(letter);
+})
+
+let userClick6 = q.addEventListener("click", (e) => {
     let letter = e.target.getAttribute("data-key")
     guessWord(letter);
 })
