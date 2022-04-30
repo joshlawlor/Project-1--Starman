@@ -26,7 +26,7 @@ makeBoxes();
 
 //*****TIMER FUNCTION AND VARIABLES*****
 let timer = 0;
-let timeLeft = 10;
+let timeLeft = 30;
 
 function countDown() {
     timeLeft = timeLeft-1;
@@ -67,27 +67,27 @@ let box5 = document.getElementById(5)
 // Need to add win function, if all letterboxes are full, user wins
 function guessWord(letter) { 
     if (letter === word[0] && box1.innerHTML !== word[0]){
-        alert(`Correct, the first letter is ${word[0]}`)
+        // alert(`Correct, the first letter is ${word[0]}`)
         playerScore = playerScore + 1;
         box1.innerHTML = letter;
         return gameWin();
     }else if(letter === word[1] && box2.innerHTML !== word[1]){
-        alert(`Correct, the second letter is ${word[1]}`)
+        // alert(`Correct, the second letter is ${word[1]}`)
         playerScore = playerScore + 1;
         box2.innerHTML = letter;
         return gameWin();
     }else if(letter === word[2] && box3.innerHTML !== word[2]){
-        alert(`Correct, the third letter is ${word[2]}`)
+        // alert(`Correct, the third letter is ${word[2]}`)
         playerScore = playerScore + 1;
         box3.innerHTML = letter;
         return gameWin();
     }else if(letter === word[3] && box4.innerHTML !== word[3]){
-        alert(`Correct, the fourth letter is ${word[3]}`)
+        // alert(`Correct, the fourth letter is ${word[3]}`)
         playerScore = playerScore + 1;
         box4.innerHTML = letter;
         return gameWin();
     }else if(letter === word[4] && box5.innerHTML !== word[4]){
-        alert(`Correct, the fifth letter is ${word[4]}`)
+        // alert(`Correct, the fifth letter is ${word[4]}`)
         playerScore = playerScore + 1;
         box5.innerHTML = letter;
         return gameWin();
