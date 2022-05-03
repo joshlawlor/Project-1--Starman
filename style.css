@@ -212,9 +212,10 @@ body{
                     margin: 9px;
                     font-size: x-large;
                     background-color: #FF6600;
-                    background-image: url(/images/metalTexture.jpg);
-                    background-size: 170%;
+                    background-image: url(/images/stripes.svg);
+                    background-size:  2350%;
                     background-repeat: repeat; 
+                    background-position: 100%;
                 }
 
 

@@ -8,7 +8,16 @@
 
 
 //WORD BANK
-const word = ["S", "P", "A" , "C", "E"];
+class WordBank {
+    constructor(letters = []){
+        this.letters = letters
+    }
+}
+
+const earth = new WordBank(["E", "A", "R", "T", "H"])
+console.log(earth)
+const word = ["E", "A", "R", "T", "H"];
+let finalWord = word.join('');
 let playerScore = 0;
 //*Function to create letterboxes based on how many letters inside the secret word
 function makeBoxes() {
@@ -41,6 +50,16 @@ function countDown() {
 //**START GAME FUNCTION AND VARIABLES**/
 const startButton = document.getElementById("startButton")
 startButton.addEventListener("click", (e) => {
+    const lettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    lettersArray.forEach(function (element){
+    let key = document.querySelector(`[data-key="${element}"]`)
+    key.addEventListener("click", (e) => {
+        let playerGuess = e.target.getAttribute("data-key")
+        console.log(playerGuess)
+        debugger
+         guessWord(playerGuess)
+    })
+});
     return startGame();
 })
 
@@ -67,37 +86,29 @@ let box5 = document.getElementById(5)
 // Need to add win function, if all letterboxes are full, user wins
 function guessWord(letter) { 
     if (letter === word[0] && box1.innerHTML !== word[0]){
-        // alert(`Correct, the first letter is ${word[0]}`)
         playerScore = playerScore + 1;
         box1.innerHTML = letter;
         return gameWin();
     }else if(letter === word[1] && box2.innerHTML !== word[1]){
-        // alert(`Correct, the second letter is ${word[1]}`)
         playerScore = playerScore + 1;
         box2.innerHTML = letter;
         return gameWin();
     }else if(letter === word[2] && box3.innerHTML !== word[2]){
-        // alert(`Correct, the third letter is ${word[2]}`)
         playerScore = playerScore + 1;
         box3.innerHTML = letter;
         return gameWin();
     }else if(letter === word[3] && box4.innerHTML !== word[3]){
-        // alert(`Correct, the fourth letter is ${word[3]}`)
         playerScore = playerScore + 1;
         box4.innerHTML = letter;
         return gameWin();
     }else if(letter === word[4] && box5.innerHTML !== word[4]){
-        // alert(`Correct, the fifth letter is ${word[4]}`)
         playerScore = playerScore + 1;
         box5.innerHTML = letter;
         return gameWin();
     }else {
-        alert(`Incorrect! Try another letter!`)
         let removeLetter = document.querySelector(`[data-key="${letter}"]`)
         removeLetter.remove()
     }
-    console.log(playerScore)
-    
 }
 
 
@@ -105,7 +116,7 @@ function guessWord(letter) {
 function gameWin(){
     if(playerScore >= word.length){
         clearInterval(timer);
-        alert(`You win! The word is SPACE`)
+        alert(`You win! The word is ${finalWord}`)
     }
 }
 
@@ -128,88 +139,4 @@ reset.addEventListener("click", (e)=> {
     return window.location.reload();
 })
 
-
-// This class should assign a value to each key on the keyboard
-// class Letter {
-//     constructor(value){
-//         this.value = value;
-//     }
-//     userClick(){
-//         this.addEventListener("click" , (e)=> {
-//             let letter = e.target.getAttribute("data-key")
-//             guessWord(letter);
-//         })
-//     }
-// }
-
-// const a = new Letter("a")
-// const b = new Letter("b")
-
-
-
-// const s = document.querySelector('[data-key="S"]')
-// const p = document.querySelector('[data-key="P"]')
-// const a = document.querySelector('[data-key="A"')
-// const c = document.querySelector('[data-key="C"')
-// const e = document.querySelector('[data-key="E"')
-// const q = document.querySelector('[data-key="Q"')
-// let userClick = s.addEventListener("click", (e) => {
-//     let letter = e.target.getAttribute("data-key")
-//     guessWord(letter);
-// })
-
-// let userClick2 = p.addEventListener("click", (e) => {
-//     let letter = e.target.getAttribute("data-key")
-//     guessWord(letter);
-// })
-
-// let userClick3 = a.addEventListener("click", (e) => {
-//     let letter = e.target.getAttribute("data-key")
-//     guessWord(letter);
-// })
-
-// let userClick4 = c.addEventListener("click", (e) => {
-//     let letter = e.target.getAttribute("data-key")
-//     guessWord(letter);
-// })
-
-// let userClick5 = e.addEventListener("click", (e) => {
-//     let letter = e.target.getAttribute("data-key")
-//     guessWord(letter);
-// })
-
-// let userClick6 = q.addEventListener("click", (e) => {
-//     let letter = e.target.getAttribute("data-key")
-//     guessWord(letter);
-// })
-
-
-//Couldn't figure out why the below function was not working, tried changing 
-//every variable name and even changed around the guessWord function
-//Found out the problem wasn't even the function, it was that I had forgotten
-//to comment out my starter code for this.
-
-const lettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-lettersArray.forEach(function (element){
-    let key = document.querySelector(`[data-key="${element}"]`)
-    key.addEventListener("click", (e) => {
-        let playerGuess = e.target.getAttribute("data-key")
-         guessWord(playerGuess)
-    })
-});
-
-
-// Need to make a function, that will iterate through each letter on the keyboard
-// and assigns the click event Listener to each one individually, so that if any is clicked
-// it calls the guessWord function, comparing the target
-
-//For each button, grab the element and save to a variable of that letter a = "a" etc
-/************************************************************************************* */
-
-// function userClick() {
-//     Letter.array.forEach(element => {
-//         console.log(element)
-//     });
-// }
-// userClick();
 
