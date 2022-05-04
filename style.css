@@ -56,6 +56,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     min-width: 40vw;
+    
 }
 
         #title {
@@ -72,21 +73,25 @@ body{
             /* border: 3px solid blue; */
             height: 16vh;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             
         }
             #timerTitle{
+                color: white;
                 display: flex;
                 align-items: center;
                 flex-direction: row;
                 justify-content: center;
+                font-size: xx-large;
+  
             }
             #timeLeft{
                 border: 5px solid black;
                 height: 10vh;
                 width: 10vw;
+                font-size: xx-large;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -143,6 +148,8 @@ body{
             align-items: center;
             
         }
+
+        
 
 
 
