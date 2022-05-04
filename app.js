@@ -16,22 +16,41 @@ class WordBank {
 
 const earth = new WordBank(["E", "A", "R", "T", "H"])
 const moon = new WordBank(["M", "O" , "O", "N"])
-console.log(moon.letters[0])
-const word = ["E", "A", "R", "T", "H"];
-let finalWord = word.join('');
+const pluto = new WordBank(["P", "L", "U", "T", "O"])
+
+
 let playerScore = 0;
+let currentRound = 1;
+let guessedWord = []
 
 
 /**LETTER BOX FUNCTIONS**/
 function makeBoxes() {
-    const textBox = document.querySelector("#textBox")
-
-    for(let i = 0; i < word.length; i++){
-        let box = document.createElement("div")
-        box.classList.add("box");
-        box.setAttribute("id", i + 1)
-        textbox.appendChild(box)  //When I make this variable textBox, it doesn't work.Only lowercase, Weird bug//
-    }
+    if(currentRound === 1){
+        const textBox = document.querySelector("#textBox")
+        for(let i = 0; i < earth.letters.length; i++){
+            let box = document.createElement("div")
+            box.classList.add("box");
+            box.setAttribute("id", i + 1)
+            textbox.appendChild(box)  //When I make this variable textBox, it doesn't work.Only lowercase, Weird bug//
+        }
+    }else if(currentRound === 2){
+        const textBox = document.querySelector("#textBox")
+        for(let i = 0; i < moon.letters.length; i++){
+            let box = document.createElement("div")
+            box.classList.add("box");
+            box.setAttribute("id", i + 1)
+            textbox.appendChild(box)
+        }
+    }else if(currentRound === 3){
+        const textBox = document.querySelector("#textBox")
+        for(let i = 0; i < pluto.letters.length; i++){
+            let box = document.createElement("div")
+            box.classList.add("box");
+            box.setAttribute("id", i + 1)
+            textbox.appendChild(box)
+        }
+    }    
 
 }
 makeBoxes();
@@ -44,9 +63,11 @@ let box3 = document.getElementById(3)
 let box4 = document.getElementById(4)
 let box5 = document.getElementById(5)
 
+
+
 //**TIMER FUNCTION AND VARIABLES**//
 let timer = 0;
-let timeLeft = 30;
+let timeLeft = 90;
 
 function countDown() {
     timeLeft = timeLeft-1;
@@ -66,8 +87,8 @@ startButton.addEventListener("click", (e) => {
     lettersArray.forEach(function (element){
         let key = document.querySelector(`[data-key="${element}"]`)
         key.addEventListener("click", (e) => {
-            let playerGuess = e.target.getAttribute("data-key")
-            guessWord(playerGuess)
+            let letter = e.target.getAttribute("data-key")
+            guessWord(letter)
         })
     });
     return startGame();
@@ -91,39 +112,144 @@ reset.addEventListener("click", (e)=> {
 // Need to add win function, if all letterboxes are full, user wins
 function guessWord(letter) { 
 
-
-    if (letter === word[0] && box1.innerHTML !== word[0]){
-        playerScore = playerScore + 1;
-        box1.innerHTML = letter;
-        return gameWin();
-    }else if(letter === word[1] && box2.innerHTML !== word[1]){
-        playerScore = playerScore + 1;
-        box2.innerHTML = letter;
-        return gameWin();
-    }else if(letter === word[2] && box3.innerHTML !== word[2]){
-        playerScore = playerScore + 1;
-        box3.innerHTML = letter;
-        return gameWin();
-    }else if(letter === word[3] && box4.innerHTML !== word[3]){
-        playerScore = playerScore + 1;
-        box4.innerHTML = letter;
-        return gameWin();
-    }else if(letter === word[4] && box5.innerHTML !== word[4]){
-        playerScore = playerScore + 1;
-        box5.innerHTML = letter;
-        return gameWin();
-    }else {
-        let removeLetter = document.querySelector(`[data-key="${letter}"]`)
-        removeLetter.remove()
-    }
-
+    if(currentRound === 1){
+        if (letter === earth.letters[0] && box1.innerHTML !== earth.letters[0]){
+            playerScore = playerScore + 1;
+            box1.innerHTML = letter;
+            guessedWord.push(letter);
+            return nextRound();
+        }else if(letter === earth.letters[1] && box2.innerHTML !== earth.letters[1]){
+            playerScore = playerScore + 1;
+            box2.innerHTML = letter;
+            guessedWord.push(letter);
+            return nextRound();
+        }else if(letter === earth.letters[2] && box3.innerHTML !== earth.letters[2]){
+            playerScore = playerScore + 1;
+            box3.innerHTML = letter;
+            guessedWord.push(letter);
+            return nextRound();
+        }else if(letter === earth.letters[3] && box4.innerHTML !== earth.letters[3]){
+            playerScore = playerScore + 1;
+            box4.innerHTML = letter;
+            guessedWord.push(letter);
+            return nextRound();
+        }else if(letter === earth.letters[4] && box5.innerHTML !== earth.letters[4]){
+            playerScore = playerScore + 1;
+            box5.innerHTML = letter;
+            guessedWord.push(letter);
+            return nextRound();
+        }else {
+            let removeLetter = document.querySelector(`[data-key="${letter}"]`)
+            removeLetter.remove()
+        }
+    }else if(currentRound === 2){
+        if (letter === moon.letters[0] && box1.innerHTML !== moon.letters[0]){
+            playerScore = playerScore + 1;
+            box1.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === moon.letters[1] && box2.innerHTML !== moon.letters[1]){
+            playerScore = playerScore + 1;
+            box2.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === moon.letters[2] && box3.innerHTML !== moon.letters[2]){
+            playerScore = playerScore + 1;
+            box3.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === moon.letters[3] && box4.innerHTML !== moon.letters[3]){
+            playerScore = playerScore + 1;
+            box4.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === moon.letters[4] && box5.innerHTML !== moon.letters[4]){
+            playerScore = playerScore + 1;
+            box5.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else {
+            let removeLetter = document.querySelector(`[data-key="${letter}"]`)
+            removeLetter.remove()
+        }
+    }else if(currentRound === 3){
+        if (letter === pluto.letters[0] && box1.innerHTML !== pluto.letters[0]){
+            playerScore = playerScore + 1;
+            box1.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === pluto.letters[1] && box2.innerHTML !== pluto.letters[1]){
+            playerScore = playerScore + 1;
+            box2.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === pluto.letters[2] && box3.innerHTML !== pluto.letters[2]){
+            playerScore = playerScore + 1;
+            box3.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === pluto.letters[3] && box4.innerHTML !== pluto.letters[3]){
+            playerScore = playerScore + 1;
+            box4.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else if(letter === pluto.letters[4] && box5.innerHTML !== pluto.letters[4]){
+            playerScore = playerScore + 1;
+            box5.innerHTML = letter;
+            guessedWord.push(letter);
+            console.log(guessedWord)
+            return nextRound();
+        }else {
+            let removeLetter = document.querySelector(`[data-key="${letter}"]`)
+            removeLetter.remove()
+        }
+    }    
     
+}
+
+
+//**NEXT ROUND FUNCTION**/
+function nextRound(){
+    if(guessedWord.join('') === earth.letters.join('')){
+        currentRound += 1;
+        let oldBoxes = document.querySelectorAll(".box")
+        oldBoxes.forEach(function (e){
+            e.remove();
+        })
+        makeBoxes();
+        guessedWord = []
+    }else if(guessedWord.join('') === moon.letters.join('')){
+        currentRound += 1;
+        let oldBoxes = document.querySelectorAll(".box")
+        oldBoxes.forEach(function (e){
+            e.remove();
+        })
+        makeBoxes();
+        guessedWord = []
+    }else if(guessedWord.join('') === pluto.letters.join('')){
+        let oldBoxes = document.querySelectorAll(".box")
+        oldBoxes.forEach(function (e){
+            e.remove();
+        })
+        makeBoxes();
+        guessedWord = []
+        gameWin();
+    }
 }
 
 
 //**WIN/LOSE Functions */
 function gameWin(){
-    if(playerScore >= word.length){
+    if(currentRound === 3){
         clearInterval(timer);
         let timerTitle = document.querySelector("#timerTitle")
         let timeLeft = document.querySelector("#timeLeft")
@@ -131,8 +257,7 @@ function gameWin(){
         timerTitle.style.fontSize = "120px";
         timerTitle.style.color = "green";
         timeLeft.remove()
-    
-        // alert(`You win! The word is ${finalWord}`)
+        guessedWord = [];
     }
 }
 
