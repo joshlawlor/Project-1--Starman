@@ -55,7 +55,10 @@ function makeBoxes() {
 }
 makeBoxes();
 
-const boxesArray = document.querySelectorAll(".box")
+let boxesArray = [ ];
+
+
+// const boxesArray = document.querySelectorAll(".box")
 
 let box1 = document.getElementById(1)
 let box2 = document.getElementById(2)
@@ -96,6 +99,8 @@ startButton.addEventListener("click", (e) => {
 
 function startGame (){
     timer = setInterval(countDown, 1000);
+    let start = document.getElementById("startButton")
+    start.style.display = "none";
     countDown();
 }
 
@@ -219,7 +224,17 @@ function guessWord(letter) {
 
 //**NEXT ROUND FUNCTION**/
 function nextRound(){
-    if(guessedWord.join('') === earth.letters.join('')){
+    guessedWord.sort();
+    if(guessedWord.join('') === "AEHRT"){
+        currentRound += 1;
+        let oldBoxes = document.querySelectorAll(".box")
+        oldBoxes.forEach(function (e){
+            e.remove();
+        })
+        makeBoxes();
+
+        guessedWord = []
+    }else if(guessedWord.join('') === "MNOO"){
         currentRound += 1;
         let oldBoxes = document.querySelectorAll(".box")
         oldBoxes.forEach(function (e){
@@ -227,15 +242,7 @@ function nextRound(){
         })
         makeBoxes();
         guessedWord = []
-    }else if(guessedWord.join('') === moon.letters.join('')){
-        currentRound += 1;
-        let oldBoxes = document.querySelectorAll(".box")
-        oldBoxes.forEach(function (e){
-            e.remove();
-        })
-        makeBoxes();
-        guessedWord = []
-    }else if(guessedWord.join('') === pluto.letters.join('')){
+    }else if(guessedWord.join('') === "LOPTU"){
         let oldBoxes = document.querySelectorAll(".box")
         oldBoxes.forEach(function (e){
             e.remove();
