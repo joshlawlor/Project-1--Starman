@@ -1,6 +1,10 @@
 
 body{
-    background-color: darkorange;
+    /* background-color: darkorange; */
+    background-image: url(/images/spaceBG.jfif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height:max-content;
 }
 
 
@@ -14,12 +18,12 @@ body{
 #main {
     display: flex;
     /* border: 3px solid red; */
-    background-color: black;
+    /* background-color: black; */
     max-height: 50vh;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-image: url(/images/spaceBG.jfif);
+    /* background-image: url(/images/spaceBG.jfif); */
     background-repeat: no-repeat;
     background-size: 100%;
 
