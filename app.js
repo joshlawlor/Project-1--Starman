@@ -25,47 +25,38 @@ let guessedWord = []
 
 
 /**LETTER BOX FUNCTIONS**/
+let boxes = [ ];
+
 function makeBoxes() {
+    
     if(currentRound === 1){
-        const textBox = document.querySelector("#textBox")
         for(let i = 0; i < earth.letters.length; i++){
             let box = document.createElement("div")
             box.classList.add("box");
             box.setAttribute("id", i + 1)
-            textbox.appendChild(box)  //When I make this variable textBox, it doesn't work.Only lowercase, Weird bug//
+            textbox.appendChild(box) 
+            boxes.push(box) 
         }
     }else if(currentRound === 2){
-        const textBox = document.querySelector("#textBox")
         for(let i = 0; i < moon.letters.length; i++){
             let box = document.createElement("div")
             box.classList.add("box");
             box.setAttribute("id", i + 1)
             textbox.appendChild(box)
+            boxes.push(box)
         }
     }else if(currentRound === 3){
-        const textBox = document.querySelector("#textBox")
         for(let i = 0; i < pluto.letters.length; i++){
             let box = document.createElement("div")
             box.classList.add("box");
             box.setAttribute("id", i + 1)
             textbox.appendChild(box)
+            boxes.push(box)
         }
     }    
 
 }
 makeBoxes();
-
-let boxesArray = [ ];
-
-
-// const boxesArray = document.querySelectorAll(".box")
-
-let box1 = document.getElementById(1)
-let box2 = document.getElementById(2)
-let box3 = document.getElementById(3)
-let box4 = document.getElementById(4)
-let box5 = document.getElementById(5)
-
 
 
 //**TIMER FUNCTION AND VARIABLES**//
@@ -118,29 +109,29 @@ reset.addEventListener("click", (e)=> {
 function guessWord(letter) { 
 
     if(currentRound === 1){
-        if (letter === earth.letters[0] && box1.innerHTML !== earth.letters[0]){
+        if (letter === earth.letters[0] && boxes[0].innerHTML !== earth.letters[0]){
             playerScore = playerScore + 1;
-            box1.innerHTML = letter;
+            boxes[0].innerHTML = letter;
             guessedWord.push(letter);
             return nextRound();
-        }else if(letter === earth.letters[1] && box2.innerHTML !== earth.letters[1]){
+        }else if(letter === earth.letters[1] && boxes[1].innerHTML !== earth.letters[1]){
             playerScore = playerScore + 1;
-            box2.innerHTML = letter;
+            boxes[1].innerHTML = letter;
             guessedWord.push(letter);
             return nextRound();
-        }else if(letter === earth.letters[2] && box3.innerHTML !== earth.letters[2]){
+        }else if(letter === earth.letters[2] && boxes[2].innerHTML !== earth.letters[2]){
             playerScore = playerScore + 1;
-            box3.innerHTML = letter;
+            boxes[2].innerHTML = letter;
             guessedWord.push(letter);
             return nextRound();
-        }else if(letter === earth.letters[3] && box4.innerHTML !== earth.letters[3]){
+        }else if(letter === earth.letters[3] && boxes[3].innerHTML !== earth.letters[3]){
             playerScore = playerScore + 1;
-            box4.innerHTML = letter;
+            boxes[3].innerHTML = letter;
             guessedWord.push(letter);
             return nextRound();
-        }else if(letter === earth.letters[4] && box5.innerHTML !== earth.letters[4]){
+        }else if(letter === earth.letters[4] && boxes[4].innerHTML !== earth.letters[4]){
             playerScore = playerScore + 1;
-            box5.innerHTML = letter;
+            boxes[4].innerHTML = letter;
             guessedWord.push(letter);
             return nextRound();
         }else {
@@ -148,33 +139,33 @@ function guessWord(letter) {
             removeLetter.remove()
         }
     }else if(currentRound === 2){
-        if (letter === moon.letters[0] && box1.innerHTML !== moon.letters[0]){
+        if (letter === moon.letters[0] && boxes[0].innerHTML !== moon.letters[0]){
             playerScore = playerScore + 1;
-            box1.innerHTML = letter;
+            boxes[0].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === moon.letters[1] && box2.innerHTML !== moon.letters[1]){
+        }else if(letter === moon.letters[1] && boxes[1].innerHTML !== moon.letters[1]){
             playerScore = playerScore + 1;
-            box2.innerHTML = letter;
+            boxes[1].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === moon.letters[2] && box3.innerHTML !== moon.letters[2]){
+        }else if(letter === moon.letters[2] && boxes[2].innerHTML !== moon.letters[2]){
             playerScore = playerScore + 1;
-            box3.innerHTML = letter;
+            boxes[2].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === moon.letters[3] && box4.innerHTML !== moon.letters[3]){
+        }else if(letter === moon.letters[3] && boxes[3].innerHTML !== moon.letters[3]){
             playerScore = playerScore + 1;
-            box4.innerHTML = letter;
+            boxes[3].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === moon.letters[4] && box5.innerHTML !== moon.letters[4]){
+        }else if(letter === moon.letters[4] && boxes[4].innerHTML !== moon.letters[4]){
             playerScore = playerScore + 1;
-            box5.innerHTML = letter;
+            boxes[4].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
@@ -183,38 +174,38 @@ function guessWord(letter) {
             removeLetter.remove()
         }
     }else if(currentRound === 3){
-        if (letter === pluto.letters[0] && box1.innerHTML !== pluto.letters[0]){
+        if (letter === pluto.letters[0] && boxes[0].innerHTML !== pluto.letters[0]){
             playerScore = playerScore + 1;
-            box1.innerHTML = letter;
+            boxes[0].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === pluto.letters[1] && box2.innerHTML !== pluto.letters[1]){
+        }else if(letter === pluto.letters[1] && boxes[1].innerHTML !== pluto.letters[1]){
             playerScore = playerScore + 1;
-            box2.innerHTML = letter;
+            boxes[1].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === pluto.letters[2] && box3.innerHTML !== pluto.letters[2]){
+        }else if(letter === pluto.letters[2] && boxes[2].innerHTML !== pluto.letters[2]){
             playerScore = playerScore + 1;
-            box3.innerHTML = letter;
+            boxes[2].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === pluto.letters[3] && box4.innerHTML !== pluto.letters[3]){
+        }else if(letter === pluto.letters[3] && boxes[3].innerHTML !== pluto.letters[3]){
             playerScore = playerScore + 1;
-            box4.innerHTML = letter;
+            boxes[3].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
-        }else if(letter === pluto.letters[4] && box5.innerHTML !== pluto.letters[4]){
+        }else if(letter === pluto.letters[4] && boxes[4].innerHTML !== pluto.letters[4]){
             playerScore = playerScore + 1;
-            box5.innerHTML = letter;
+            boxes[4].innerHTML = letter;
             guessedWord.push(letter);
             console.log(guessedWord)
             return nextRound();
         }else {
-            let removeLetter = document.querySelector(`[data-key="${letter}"]`)
+            let removeLetter = document.querySelector(`[data-key="${letter}"]`)           
             removeLetter.remove()
         }
     }    
@@ -231,8 +222,8 @@ function nextRound(){
         oldBoxes.forEach(function (e){
             e.remove();
         })
+        boxes = [] //THIS IS THE FIX TO MY BUG!
         makeBoxes();
-
         guessedWord = []
     }else if(guessedWord.join('') === "MNOO"){
         currentRound += 1;
@@ -240,6 +231,7 @@ function nextRound(){
         oldBoxes.forEach(function (e){
             e.remove();
         })
+        boxes = []
         makeBoxes();
         guessedWord = []
     }else if(guessedWord.join('') === "LOPTU"){
@@ -247,6 +239,7 @@ function nextRound(){
         oldBoxes.forEach(function (e){
             e.remove();
         })
+        boxes = []
         makeBoxes();
         guessedWord = []
         gameWin();
