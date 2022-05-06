@@ -14,16 +14,16 @@ class Question {
     }
 }
 const question1 = new Question(
-    `What is the name of the AI in 2001 A Space Odyessey?`
+    `AI~ What is the name of the AI in 2001 A Space Odyessey?`
 );
 const question2 = new Question
-(`What is Always Old, Sometimes New.  
+(`AI~ What is Always Old, Sometimes New.  
 Never Sad, Sometimes Blue.   
 Never Empty, Sometimes Full.  
 Never Pushes, Always Pulls.`);
 
 const question3 = new Question(
-    `I have never been respected, but I am named after a Greek God! What planet am I?`
+    `AI~ I have never been respected, but I am named after a Greek God! What planet am I?`
 )
 
 
@@ -81,7 +81,7 @@ makeBoxes();
 
 //**TIMER FUNCTION AND VARIABLES**//
 let timer = 0;
-let timeLeft = 90;
+let timeLeft = 45;
 
 function countDown() {
     timeLeft = timeLeft-1;
@@ -112,6 +112,8 @@ function startGame (){
     timer = setInterval(countDown, 1000);
     let start = document.getElementById("startButton")
     start.style.display = "none";
+    let rules = document.getElementById("rulesList")
+    rules.remove();
     countDown();
     let question = document.querySelector("#gameText")
     question.innerHTML = question1.riddle;
@@ -149,10 +151,10 @@ function guessWord(letter) {
             guessedWord.push(letter);
             return nextRound();
         }
-        // else {
-        //     let removeLetter = document.querySelector(`[data-key="${letter}"]`)
-        //     removeLetter.remove()
-        // }
+        else {
+            let removeLetter = document.querySelector(`[data-key="${letter}"]`)
+            removeLetter.style.color = "red";
+        }
     }else if(currentRound === 2){
         if (letter === word2.letters[0] && boxes[0].innerHTML !== word2.letters[0]){
             playerScore = playerScore + 1;
@@ -180,10 +182,10 @@ function guessWord(letter) {
             guessedWord.push(letter);
             return nextRound();
         }
-        // else {
-        //     let removeLetter = document.querySelector(`[data-key="${letter}"]`)
-        //     removeLetter.remove()
-        // }
+        else {
+            let removeLetter = document.querySelector(`[data-key="${letter}"]`)
+            removeLetter.style.color = "red";
+        }
     }else if(currentRound === 3){
         if (letter === word3.letters[0] && boxes[0].innerHTML !== word3.letters[0]){
             playerScore = playerScore + 1;
@@ -211,10 +213,10 @@ function guessWord(letter) {
             guessedWord.push(letter);
             return nextRound();
         }
-        // else {
-        //     let removeLetter = document.querySelector(`[data-key="${letter}"]`)           
-        //     removeLetter.remove()
-        // }
+        else {
+            let removeLetter = document.querySelector(`[data-key="${letter}"]`)           
+            removeLetter.style.color = "red";
+        }
     }    
     
 }
@@ -227,7 +229,7 @@ function nextRound(){
         currentRound += 1;
         let question = document.querySelector("#gameText")
         question.innerHTML = question2.riddle;
-
+        keysReset();
         let oldBoxes = document.querySelectorAll(".box")
         oldBoxes.forEach(function (e){
             e.remove();
@@ -239,6 +241,7 @@ function nextRound(){
         currentRound += 1;
         let question = document.querySelector("#gameText")
         question.innerHTML = question3.riddle;
+        keysReset();
         let oldBoxes = document.querySelectorAll(".box")
         oldBoxes.forEach(function (e){
             e.remove();
@@ -247,6 +250,7 @@ function nextRound(){
         makeBoxes();
         guessedWord = []
     }else if(guessedWord.join('') === "LOPTU"){
+        keysReset();
         let oldBoxes = document.querySelectorAll(".box")
         oldBoxes.forEach(function (e){
             e.remove();
@@ -258,8 +262,17 @@ function nextRound(){
     }
 }
 
+//**Keyboard Reset function**/
 
-//**WIN/LOSE Functions */
+
+function keysReset(){
+    const keys = document.querySelectorAll(".button")
+keys.forEach(function (e){
+    e.style.color = "black";
+})
+}
+
+//**WIN/LOSE Functions**/
 function gameWin(){
     if(currentRound === 3){
         clearInterval(timer);
@@ -269,6 +282,9 @@ function gameWin(){
         timerTitle.style.fontSize = "120px";
         timerTitle.style.color = "green";
         timeLeft.remove()
+        let winText = document.getElementById("gameText")
+        console.log(winText)
+        winText.innerText = "AI~ Course successfully corrected. Astronaut has been Intercepted."
         guessedWord = [];
     }
 }
@@ -283,6 +299,8 @@ function gameOver(){
         timerTitle.style.fontSize = "100px";
         timerTitle.style.color = "red";
         timeLeft.remove()
+        let winText = document.getElementById("gameText")
+        winText.innerText = "AI~ Access Denied. Failed Authentication Procedure"
 
         let keys = document.querySelector("#keyBoardRows")
         keys.remove()

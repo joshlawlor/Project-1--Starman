@@ -1,10 +1,8 @@
 
 body{
-    /* background-color: darkorange; */
     background-image: url(/images/spaceBG.jfif);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
-    min-height:max-content;
 }
 
 
@@ -19,7 +17,7 @@ body{
     display: flex;
     /* border: 3px solid red; */
     /* background-color: black; */
-    max-height: 50vh;
+    max-height: 60vh;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -56,11 +54,13 @@ body{
 /*************************************************************************/
 
 #timerBox {
+    /* border: 3px solid blue; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     min-width: 40vw;
-    
+    min-height: 30vh;
+    max-height: 50vh;
 }
 
         #title {
@@ -104,22 +104,33 @@ body{
             }
 
         #rules {
-            /* border: 3px solid red; */
-            height: 20vh;
+            border: 2px solid grey;
+            background-color: black;
+            max-height: 25vh;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
-            font-size: x-small;
+            align-items: center;
+            font-size: x-large;
 
         }
             #gameText{
+                /* border: 3px solid green; */
                 display: flex;
+                flex-direction: column;
+                max-width: 30w;
+                max-height: 20vh;
                 justify-content: center;
-                
+                font-size: xx-large;
+                color: green;
             }
             #rulesList{
+                /* border: 3px solid purple; */
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                justify-content: space-around;
+                min-height: 5vh;
+                color: red;
             }
 
 
