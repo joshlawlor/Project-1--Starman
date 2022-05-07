@@ -2,7 +2,9 @@
 
 **A time sensitive trivia game**
 
-https://max-v-walker.github.io/The-Office-Trivia-Game/index.html
+Game Link: https://joshlawlor.github.io/Project-1--Starman/
+
+
 
 - There are 3 total questions, each with 1 word answer
 - You must guess each letter of the word individually
@@ -14,7 +16,6 @@ https://max-v-walker.github.io/The-Office-Trivia-Game/index.html
 <img width ="600" src="/images/LandingPage-Screenshot.png">
 <img width ="600" src="/images/GAMEOVER-Screenshot.png">
 <img width ="600" src="/images/GAMEWIN-Screenshot.png">
-<img width ="600" src=/images/InGame-Screenshot.png">
 
 # Technologies Used
 This project is written in HTML, CSS, and JavaScript
@@ -51,72 +52,3 @@ I also had a bug when I started using rounds, the game would produce the correct
 ![image](https://media.git.generalassemb.ly/user/41952/files/f0b84680-c64e-11ec-92f6-9ca7de7d4964)
 
 ![image](https://media.git.generalassemb.ly/user/41952/files/8d2e1900-c64e-11ec-9fc8-87d222e1a816)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Project-1--Starman
-
-
-To do:
-
-[ ]Render HTML WIN & LOSE animations, not alerts
-
-[ ]Create function to give variable and event listener to each button on keyboard
-
-MVP Goals
-[X] As a player, I would like to be able to start the game 
-
-[ ] As a player, I want my game to know when I have guessed all the correct letters, and have a win animation
-
-[ ] As a player, I would like to be informed when the time limit is up, and I have lost
-
-[X] As a player, I would like to know how much longer I have to guess the letters (Timer)
-
-[X] As a player, I want to input 1 letter at a time, starting with the first letter
-
-[X] As a player, if I guess the wrong letter, I want to know
-
-[X] As a player, I would like the correct letters I guess to show up in their proper boxes
-
-[X] As a player, I would like to see how many letters I need to guess as I am playing
-
-[X] As a player, I would like to be able to play again if I win or lose
-
