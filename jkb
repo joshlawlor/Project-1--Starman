@@ -1,0 +1,143 @@
+[33mcommit edbdad06fae991781cd91d184540627698d8c1a7[m[33m ([m[1;36mHEAD -> [m[1;32mgh-pages[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/gh-pages[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat May 7 10:22:28 2022 -0400
+
+    Style.css not loading gh-pages
+
+[33mcommit 322e0d7ab3b34ce1ead77c8074c807dfdaec2cfb[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat May 7 10:19:50 2022 -0400
+
+    Adding ../ to images
+
+[33mcommit dd9e459d52f6b8ad500d7b461cba66f14d4473f7[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat May 7 09:37:42 2022 -0400
+
+    Images reconfig, trying to fix gh-pages bug
+
+[33mcommit eeeb8b74f262ea19c224f4d54e02a11efcab9b08[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat May 7 00:43:55 2022 -0400
+
+    Image Loading Bug Fix?
+
+[33mcommit 959098d0f2d9c016f2a77f39cd010f0f1c27de4a[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat May 7 00:26:47 2022 -0400
+
+    Project ready to Present.
+
+[33mcommit d24ec99a8f91c5b5511bf8423cebbd1a219f9e14[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat May 7 00:15:12 2022 -0400
+
+    README COMPLETE. Finishing touches
+
+[33mcommit e8bc811d969011fb79a3c27d2dba006b01e71be8[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Fri May 6 19:31:52 2022 -0400
+
+    Fixed keyboard bug. Resized some things, added styling
+
+[33mcommit 9898299d7bbf278124d637f25a95702920eb7970[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Thu May 5 00:26:16 2022 -0400
+
+    Put band-aid on keyboard bug. Added riddles, and ability to change my words easier
+
+[33mcommit 651203e19debf3a04241bd9d3a500243c88c662a[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Wed May 4 23:15:29 2022 -0400
+
+    makeBoxes bug is fixed. Keyboard bug still needs fixing
+
+[33mcommit cfad2d543600ae57120125ed44d0440096392ef5[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Wed May 4 22:49:48 2022 -0400
+
+    nextRound function works, wodBank works. Need to fix makeBoxes bug
+
+[33mcommit 7202a3dbf2cadbb50c546cc61866b12991d629e9[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Wed May 4 01:41:46 2022 -0400
+
+    Started rounds, need to fix makeBoxes variable storing in order for it to work correctly
+
+[33mcommit d3505b5d25fd60e36e079f55a894a3bdc937cab2[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Tue May 3 23:52:41 2022 -0400
+
+    Added HTML Win/Lose messages. Still need to incorporate the wordBank function
+
+[33mcommit 39f3ab5ec70e02fb1a30f03eba5d11fdf8c8844b[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Mon May 2 23:30:21 2022 -0400
+
+    Now player cannot start guessing until launch, removed redundant code
+
+[33mcommit 59348108412bcd5dcc52893d5d3487211dad89fc[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat Apr 30 18:29:30 2022 -0400
+
+    Keyboard is fully functional now, can remove previous code. Added more styling to buttons.
+
+[33mcommit 9cc030c6971f0c86c003bb7886ee8de5f2c85e44[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat Apr 30 14:54:52 2022 -0400
+
+    Added styling and new Images to game. Removed borders to make things cleaner
+
+[33mcommit b87243eeb85de4aea59b71a70f79f18f31e812af[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat Apr 30 14:23:29 2022 -0400
+
+    Got gameOver and gameWin functionality. Both stop timer and alert win/lose
+
+[33mcommit fe8eedc83f7d00509ce2d9db57c14f8a34242ab2[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat Apr 30 13:46:03 2022 -0400
+
+    Timer countsdown, and when at 0 ends game. But need to fix so it stops countdown entirely, makes an endless loop otherwise
+
+[33mcommit 714efdba90b748c5fbdc2379ea6631fa43681883[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat Apr 30 13:29:13 2022 -0400
+
+    Added styling to timerBox, started function for countdown timer. Need to add start button functionality
+
+[33mcommit 940f841b7989bf13401e5128b1349af972a9c60f[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Sat Apr 30 12:47:26 2022 -0400
+
+    Reset button reloads page. Guessword checks each letter, and adds to playerScore
+
+[33mcommit 055d9b7c276e43634dd55d7b60b9ff077d3c24e9[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Thu Apr 28 00:43:13 2022 -0400
+
+    Added keyboard function, can compare clicked to wordbank
+
+[33mcommit 656f05fe72a72335e7cafe792e42625c61e6fe10[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Thu Apr 28 00:19:48 2022 -0400
+
+    Added keyboard and start/reset buttons. CSS needs resizing
+
+[33mcommit 28d88d98c1a8bbaac46881e2d7645ef10f60a917[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Wed Apr 27 23:32:57 2022 -0400
+
+    Added css for gameItems, and function to make letterBoxes
+
+[33mcommit a3ed1bb7808f6d7b07a16e98ae1df84212d5f48d[m
+Author: qjoshlawlor <joshlawlor1@gmail.com>
+Date:   Wed Apr 27 19:02:30 2022 -0400
+
+    Added index,css,js files
+
+[33mcommit 2681290fc5dd140d4764a4a5cf85bce4c0159696[m
+Author: joshlawlor <101484054+joshlawlor@users.noreply.github.com>
+Date:   Wed Apr 27 19:01:12 2022 -0400
+
+    Initial commit
