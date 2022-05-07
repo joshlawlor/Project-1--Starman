@@ -1,6 +1,6 @@
 
 body{
-    background-image: url("./images/spaceBG.jfif");
+    background-image: url("../images/spaceBG.jfif");
     background-repeat: repeat;
     background-size: 100%;
 }
@@ -133,7 +133,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-image: url("./images/stripes.svg");
+    background-image: url("../images/stripes.svg");
     background-repeat: repeat;
 
     
@@ -162,7 +162,7 @@ body{
 #playerUI {
     height: 40vh;
     background-color: lightblue;
-    background-image: url("./images/UI.jpg");
+    background-image: url("../images/UI.jpg");
     background-repeat: repeat;
     background-size: 100%;
     background-position: 0%;
@@ -219,7 +219,7 @@ body{
                 margin: 9px;
                 font-size: x-large;
                 background-color: #FF6600;
-                background-image: url("./images/stripes.svg");
+                background-image: url("../images/stripes.svg");
                 background-size:  2350%;
                 background-repeat: repeat; 
                 background-position: 100%;
