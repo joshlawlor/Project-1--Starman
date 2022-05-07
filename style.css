@@ -11,23 +11,17 @@ body{
     
 }
 
-
-
-#main {
+#gameSpace {
     display: flex;
-    /* border: 3px solid red; */
-    /* background-color: black; */
     max-height: 60vh;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    /* background-image: url(/images/spaceBG.jfif); */
     background-repeat: no-repeat;
     background-size: 100%;
 
 }
         .gameItems {
-            /* border: 3px solid white; */
             max-width: 20vw;
             max-height: 20vw;
         }
@@ -53,8 +47,7 @@ body{
          
 /*************************************************************************/
 
-#timerBox {
-    /* border: 3px solid blue; */
+#gameMenu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -64,7 +57,6 @@ body{
 }
 
         #title {
-            /* border: 3px solid red; */
             height: 10vh;
             display: flex;
             justify-content: center;
@@ -74,7 +66,6 @@ body{
         }
 
         #timerEl{
-            /* border: 3px solid blue; */
             height: 16vh;
             display: flex;
             flex-direction: column;
@@ -115,7 +106,6 @@ body{
 
         }
             #gameText{
-                /* border: 3px solid green; */
                 display: flex;
                 flex-direction: column;
                 max-width: 30w;
@@ -125,7 +115,6 @@ body{
                 color: green;
             }
             #rulesList{
-                /* border: 3px solid purple; */
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -137,8 +126,7 @@ body{
 
 /* ***************************************** */
 
-#textbox {
-    /* border: 3px solid green; */
+#letterBox {
     min-height: 15vh;
     background-color: grey;
     display: flex;
@@ -172,7 +160,6 @@ body{
 
 
 #playerUI {
-    /* border: 3px solid purple; */
     height: 40vh;
     background-color: lightblue;
     background-image: url(/images/UI.jpg);
@@ -220,25 +207,23 @@ body{
             justify-content: center;
         }
 
-                .row {
-                    display: flex;
-                    justify-content: center;
-                    justify-content: space-between;
-                    
-                }
+             .row {
+                display: flex;
+                justify-content: center;
+                justify-content: space-between;                    
+             }
 
-                .button {
-                    /* border: 7px solid #FF6600; */
-                    width: 6vw;
-                    height: 5vw;
-                    margin: 9px;
-                    font-size: x-large;
-                    background-color: #FF6600;
-                    background-image: url(/images/stripes.svg);
-                    background-size:  2350%;
-                    background-repeat: repeat; 
-                    background-position: 100%;
-                }
+            .button {
+                width: 6vw;
+                height: 5vw;
+                margin: 9px;
+                font-size: x-large;
+                background-color: #FF6600;
+                background-image: url(/images/stripes.svg);
+                background-size:  2350%;
+                background-repeat: repeat; 
+                background-position: 100%;
+            }
 
 
 

@@ -1,11 +1,7 @@
-// Need a form to take user input
-
-//Need a word bank, that I can check against user input. If player gets all letters correct, they win
-
-//Need a timer function, 1 minute, if time ends user loses
-
-//Need win condition
-
+//**Starting Variables**/
+let playerScore = 0;
+let currentRound = 1;
+let guessedWord = []
 
 //**QUESTION BANK**/
 class Question {
@@ -26,8 +22,7 @@ const question3 = new Question(
     `AI~ I have never been respected, but I am named after a Greek God! What planet am I?`
 )
 
-
-//WORD BANK
+//**WORD BANK**//
 class WordBank {
     constructor(letters = []){
         this.letters = letters
@@ -37,12 +32,6 @@ class WordBank {
 const word1 = new WordBank(["H","A","L"])
 const word2 = new WordBank(["M", "O" , "O", "N"])
 const word3 = new WordBank(["P", "L", "U", "T", "O"])
-
-
-let playerScore = 0;
-let currentRound = 1;
-let guessedWord = []
-
 
 /**LETTER BOX FUNCTIONS**/
 let boxes = [ ];
@@ -54,7 +43,7 @@ function makeBoxes() {
             let box = document.createElement("div")
             box.classList.add("box");
             box.setAttribute("id", i + 1)
-            textbox.appendChild(box) 
+            letterBox.appendChild(box) 
             boxes.push(box) 
         }
     }else if(currentRound === 2){
@@ -62,7 +51,7 @@ function makeBoxes() {
             let box = document.createElement("div")
             box.classList.add("box");
             box.setAttribute("id", i + 1)
-            textbox.appendChild(box)
+            letterBox.appendChild(box)
             boxes.push(box)
         }
     }else if(currentRound === 3){
@@ -70,7 +59,7 @@ function makeBoxes() {
             let box = document.createElement("div")
             box.classList.add("box");
             box.setAttribute("id", i + 1)
-            textbox.appendChild(box)
+            letterBox.appendChild(box)
             boxes.push(box)
         }
     }    
@@ -96,7 +85,8 @@ function countDown() {
 //**START GAME FUNCTION AND VARIABLES**//
 const startButton = document.getElementById("startButton")
 startButton.addEventListener("click", (e) => {
-    const lettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    const lettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", 
+    "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     
     lettersArray.forEach(function (element){
         let key = document.querySelector(`[data-key="${element}"]`)
@@ -263,8 +253,6 @@ function nextRound(){
 }
 
 //**Keyboard Reset function**/
-
-
 function keysReset(){
     const keys = document.querySelectorAll(".button")
 keys.forEach(function (e){
@@ -283,7 +271,6 @@ function gameWin(){
         timerTitle.style.color = "green";
         timeLeft.remove()
         let winText = document.getElementById("gameText")
-        console.log(winText)
         winText.innerText = "AI~ Course successfully corrected. Astronaut has been Intercepted."
         guessedWord = [];
     }
@@ -299,9 +286,8 @@ function gameOver(){
         timerTitle.style.fontSize = "100px";
         timerTitle.style.color = "red";
         timeLeft.remove()
-        let winText = document.getElementById("gameText")
-        winText.innerText = "AI~ Access Denied. Failed Authentication Procedure"
-
+        let loseText = document.getElementById("gameText")
+        loseText.innerText = "AI~ Access Denied. Failed Authentication Procedure"
         let keys = document.querySelector("#keyBoardRows")
         keys.remove()
     }
